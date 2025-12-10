@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Panduan lengkap PSAK 16 - Aset Tetap dengan contoh jurnal, studi kasus, dan perbandingan IAS 16"/>
+  <meta name="theme-color" content="#0056b3"/>
+  <title>PSAK 16 - Aset Tetap | Panduan Akuntansi</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ========================================
+       CSS VARIABLES & ROOT SETTINGS
+    ======================================== */
+    :root {
+      /* Color Palette - Light Mode */
+      --primary-50: #eff6ff;
+      --primary-100: #dbeafe;
+      --primary-200: #bfdbfe;
+      --primary-300: #93c5fd;
+      --primary-400: #60a5fa;
+      --primary-500: #3b82f6;
+      --primary-600: #2563eb;
+      --primary-700: #1d4ed8;
+      --primary-800: #1e40af;
+      --primary-900: #1e3a8a;
+      
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      
+      --success-500: #22c55e;
+      --success-100: #dcfce7;
+      --warning-500: #f59e0b;
+      --warning-100: #fef3c7;
+      --danger-500: #ef4444;
+      --danger-100: #fee2e2;
+      
+      /* Theme Variables */
+      --bg-primary: #ffffff;
+      --bg-secondary: var(--gray-50);
+      --bg-tertiary: var(--gray-100);
+      --text-primary: var(--gray-900);
+      --text-secondary: var(--gray-600);
+      --text-muted: var(--gray-400);
+      --border-color: var(--gray-200);
+      --accent-color: var(--primary-600);
+      --accent-light: var(--primary-50);
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      
+      /* Transitions */
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+      
+      /* Spacing */
+      --container-max: 1000px;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+
+    /* Dark Mode Variables */
+    [data-theme="dark"] {
+      --bg-primary: var(--gray-900);
+      --bg-secondary: var(--gray-800);
+      --bg-tertiary: var(--gray-700);
+      --text-primary: var(--gray-50);
+      --text-secondary: var(--gray-300);
+      --text-muted: var(--gray-500);
+      --border-color: var(--gray-700);
+      --accent-light: rgba(59, 130, 246, 0.15);
+      
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+    }
+
+    /* ========================================
+       BASE & RESET STYLES
+    ======================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg-secondary);
+      min-height: 100vh;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+    }
+
+    /* ========================================
+       TYPOGRAPHY
+    ======================================== */
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); }
+    h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); margin-bottom: 1rem; }
+    h3 { font-size: clamp(1.1rem, 2.5vw, 1.35rem); margin-bottom: 0.75rem; }
+
+    p { margin-bottom: 1rem; color: var(--text-secondary); }
+
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    a:hover { color: var(--primary-700); }
+
+    /* ========================================
+       LAYOUT
+    ======================================== */
+    .app-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ========================================
+       HEADER
+    ======================================== */
+    .header {
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    [data-theme="dark"] .header {
+      background: rgba(17, 24, 39, 0.9);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .logo-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      transition: all var(--transition-fast);
+    }
+
+    .theme-toggle:hover {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border-color: var(--primary-300);
+    }
+
+    .theme-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .theme-toggle .icon-moon { display: block; }
+    .theme-toggle .icon-sun { display: none; }
+    
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+
+    /* ========================================
+       MAIN CONTENT
+    ======================================== */
+    .main {
+      flex: 1;
+      padding: 2rem 0 4rem;
+    }
+
+    .content-card {
+      background: var(--bg-primary);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .content-header {
+      padding: 2rem 2rem 0;
+    }
+
+    .page-title {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-title h1 {
+      background: linear-gradient(135deg, var(--primary-600), var(--primary-800));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--success-100);
+      color: #15803d;
+      white-space: nowrap;
+    }
+
+    [data-theme="dark"] .status-badge {
+      background: rgba(34, 197, 94, 0.2);
+      color: #4ade80;
+    }
+
+    .status-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .page-description {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+    }
+
+    /* ========================================
+       TABS NAVIGATION
+    ======================================== */
+    .tabs-wrapper {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .tabs-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      min-width: max-content;
+    }
+
+    .tab-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: var(--radius-md);
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+      position: relative;
+    }
+
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: var(--accent-color);
+      border-radius: 3px 3px 0 0;
+      transition: width var(--transition-fast);
+    }
+
+    .tab-btn:hover {
+      background: var(--accent-light);
+      color: var(--accent-color);
+    }
+
+    .tab-btn.active {
+      background: var(--accent-light);
+      color: var(--accent-color);
+    }
+
+    .tab-btn.active::after {
+      width: 100%;
+    }
+
+    .tab-btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ========================================
+       TAB CONTENT
+    ======================================== */
+    .tab-panels {
+      padding: 2rem;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeSlideIn 0.4s ease-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Section Styling */
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-color);
+    }
+
+    .section-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Info Cards */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-card {
+      padding: 1.25rem;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      transition: all var(--transition-fast);
+    }
+
+    .info-card:hover {
+      border-color: var(--primary-300);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .info-card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .info-card-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .info-card-value.highlight {
+      color: var(--accent-color);
+    }
+
+    /* ========================================
+       CODE BLOCKS (JURNAL)
+    ======================================== */
+    .journal-entry {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .journal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      background: var(--bg-tertiary);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .journal-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .journal-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .copy-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background: var(--bg-primary);
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .copy-btn:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    .copy-btn.copied {
+      background: var(--success-100);
+      border-color: var(--success-500);
+      color: #15803d;
+    }
+
+    .copy-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .journal-code {
+      padding: 1.25rem;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.875rem;
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+
+    .journal-line {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .journal-line.credit {
+      padding-left: 2rem;
+    }
+
+    .account-type {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .account-type.debit {
+      background: var(--primary-100);
+      color: var(--primary-700);
+    }
+
+    .account-type.credit {
+      background: var(--success-100);
+      color: #15803d;
+    }
+
+    [data-theme="dark"] .account-type.debit {
+      background: rgba(59, 130, 246, 0.2);
+      color: var(--primary-400);
+    }
+
+    [data-theme="dark"] .account-type.credit {
+      background: rgba(34, 197, 94, 0.2);
+      color: #4ade80;
+    }
+
+    .account-name {
+      flex: 1;
+      color: var(--text-primary);
+    }
+
+    .account-amount {
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: right;
+      min-width: 140px;
+    }
+
+    /* ========================================
+       TABLES
+    ======================================== */
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      margin: 1.5rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background: var(--bg-tertiary);
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    td {
+      color: var(--text-secondary);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: var(--accent-light);
+    }
+
+    .table-highlight {
+      background: var(--success-100) !important;
+      color: #15803d !important;
+      font-weight: 600;
+    }
+
+    [data-theme="dark"] .table-highlight {
+      background: rgba(34, 197, 94, 0.15) !important;
+      color: #4ade80 !important;
+    }
+
+    /* ========================================
+       ACCORDION / DROPDOWN
+    ======================================== */
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .accordion-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: all var(--transition-fast);
+    }
+
+    .accordion-item:hover {
+      border-color: var(--primary-300);
+    }
+
+    .accordion-item.open {
+      border-color: var(--accent-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-secondary);
+      cursor: pointer;
+      user-select: none;
+      transition: background var(--transition-fast);
+    }
+
+    .accordion-header:hover {
+      background: var(--accent-light);
+    }
+
+    .accordion-item.open .accordion-header {
+      background: var(--accent-light);
+    }
+
+    .accordion-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .accordion-title {
+      flex: 1;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .accordion-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--text-muted);
+      transition: transform var(--transition-fast);
+    }
+
+    .accordion-item.open .accordion-icon {
+      transform: rotate(180deg);
+      color: var(--accent-color);
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 1.25rem;
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .accordion-item.open .accordion-content {
+      display: block;
+      animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .accordion-content p {
+      margin-bottom: 0.75rem;
+    }
+
+    .accordion-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .accordion-content ul {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+
+    .accordion-content li {
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .accordion-content li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Highlight Box */
+    .highlight-box {
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-sm);
+      background: var(--warning-100);
+      border-left: 4px solid var(--warning-500);
+      color: #92400e;
+    }
+
+    [data-theme="dark"] .highlight-box {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+    }
+
+    .highlight-box strong {
+      color: inherit;
+    }
+
+    /* Case Study Card */
+    .case-study {
+      background: linear-gradient(135deg, var(--primary-50), var(--accent-light));
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--primary-200);
+    }
+
+    [data-theme="dark"] .case-study {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.05));
+      border-color: var(--primary-800);
+    }
+
+    .case-study-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .case-study-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--accent-color);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .case-study-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .calculation-result {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-primary);
+      border-radius: var(--radius-md);
+      margin: 1rem 0;
+      border: 1px solid var(--border-color);
+    }
+
+    .result-label {
+      color: var(--text-secondary);
+    }
+
+    .result-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-color);
+    }
+
+    .note {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg-primary);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .note svg {
+      width: 18px;
+      height: 18px;
+      color: var(--warning-500);
+      flex-shrink: 0;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    .footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border-color);
+      padding: 1.5rem 0;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-text {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-link {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      transition: color var(--transition-fast);
+    }
+
+    .footer-link:hover {
+      color: var(--accent-color);
+    }
+
+    /* ========================================
+       RESPONSIVE DESIGN
+    ======================================== */
+    @media (max-width: 768px) {
+      .header-content {
+        padding: 0.75rem 0;
+      }
+
+      .logo-text {
+        display: none;
+      }
+
+      .content-header {
+        padding: 1.5rem 1.25rem 0;
+      }
+
+      .tabs-wrapper {
+        padding: 1rem 1.25rem;
+      }
+
+      .tab-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .tab-btn span {
+        display: none;
+      }
+
+      .tab-panels {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journal-code {
+        font-size: 0.8rem;
+      }
+
+      .account-amount {
+        min-width: auto;
+      }
+
+      .case-study {
+        padding: 1.5rem;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      .header, .footer, .theme-toggle, .copy-btn {
+        display: none !important;
+      }
+
+      .content-card {
+        box-shadow: none;
+        border: none;
+      }
+
+      .tab-content {
+        display: block !important;
+        page-break-inside: avoid;
+      }
+
+      .tabs-wrapper {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <div class="logo-icon">16</div>
+            <div class="logo-text">
+              <span class="logo-title">PSAK 16</span>
+              <span class="logo-subtitle">Standar Akuntansi</span>
+            </div>
+          </div>
+          <div class="header-actions">
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+              <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+              <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <div class="content-card">
+          <!-- Content Header -->
+          <div class="content-header">
+            <div class="page-title">
+              <h1>Aset Tetap (Revisi 2011 + Amandemen hingga 2025)</h1>
+              <span class="status-badge">Aktif Berlaku</span>
+            </div>
+            <p class="page-description">
+              Panduan komprehensif tentang akuntansi aset tetap berwujud mencakup pengakuan, pengukuran, penyusutan, dan pengungkapan sesuai standar yang berlaku.
+            </p>
+          </div>
+
+          <!-- Tabs Navigation -->
+          <div class="tabs-wrapper">
+            <div class="tabs" role="tablist">
+              <button class="tab-btn active" onclick="openTab(event, 'ringkasan')" role="tab" aria-selected="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span>Ringkasan</span>
+              </button>
+              <button class="tab-btn" onclick="openTab(event, 'jurnal')" role="tab" aria-selected="false">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                <span>Contoh Jurnal</span>
+              </button>
+              <button class="tab-btn" onclick="openTab(event, 'kasus')" role="tab" aria-selected="false">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+                <span>Studi Kasus</span>
+              </button>
+              <button class="tab-btn" onclick="openTab(event, 'perbandingan')" role="tab" aria-selected="false">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                <span>PSAK vs IAS</span>
+              </button>
+              <button class="tab-btn" onclick="openTab(event, 'spesifik')" role="tab" aria-selected="false">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+                <span>Aspek Spesifik</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab Panels -->
+          <div class="tab-panels">
+            <!-- Tab: Ringkasan -->
+            <div id="ringkasan" class="tab-content active" role="tabpanel">
+              <section class="section">
+                <div class="section-header">
+                  <div class="section-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h2>Ringkasan PSAK 16</h2>
+                </div>
+                <p>
+                  PSAK 16 mengatur akuntansi untuk aset tetap berwujud yang dimiliki untuk digunakan dalam produksi atau penyediaan barang atau jasa, untuk direntalkan kepada pihak lain, atau untuk tujuan administratif, dan diperkirakan untuk digunakan selama lebih dari satu periode.
+                </p>
+              </section>
+
+              <section class="section">
+                <h3>Informasi Kunci</h3>
+                <div class="info-grid">
+                  <div class="info-card">
+                    <div class="info-card-label">Status Terkini</div>
+                    <div class="info-card-value highlight">Aktif - Desember 2025</div>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-label">Amandemen Terakhir</div>
+                    <div class="info-card-value">Bersifat Redaksional</div>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-label">Model Pengukuran Umum</div>
+                    <div class="info-card-value">Model Biaya</div>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-label">Model Alternatif</div>
+                    <div class="info-card-value">Revaluasi (jarang dipakai)</div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section">
+                <h3>Ruang Lingkup</h3>
+                <div class="highlight-box">
+                  <strong>Catatan Penting:</strong> PSAK 16 tidak berlaku untuk aset biologis terkait aktivitas agrikultur (PSAK 69), hak penambangan dan cadangan mineral, serta properti investasi (PSAK 13).
+                </div>
+              </section>
+            </div>
+
+            <!-- Tab: Jurnal -->
+            <div id="jurnal" class="tab-content" role="tabpanel">
+              <section class="section">
+                <div class="section-header">
+                  <div class="section-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <h2>Contoh Jurnal Akuntansi</h2>
+                </div>
+              </section>
+
+              <!-- Journal Entry 1 -->
+              <div class="journal-entry">
+                <div class="journal-header">
+                  <div class="journal-title">
+                    <span class="journal-number">1</span>
+                    Pembelian Mesin (Rp525 juta)
+                  </div>
+                  <button class="copy-btn" onclick="copyJournal(this, 'journal1')">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Salin
+                  </button>
+                </div>
+                <div class="journal-code" id="journal1">
+                  <div class="journal-line">
+                    <span class="account-type debit">D</span>
+                    <span class="account-name">Aset Tetap – Mesin</span>
+                    <span class="account-amount">Rp525.000.000</span>
+                  </div>
+                  <div class="journal-line credit">
+                    <span class="account-type credit">K</span>
+                    <span class="account-name">Kas/Bank</span>
+                    <span class="account-amount">Rp525.000.000</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Journal Entry 2 -->
+              <div class="journal-entry">
+                <div class="journal-header">
+                  <div class="journal-title">
+                    <span class="journal-number">2</span>
+                    Penyusutan Tahunan (Metode Garis Lurus)
+                  </div>
+                  <button class="copy-btn" onclick="copyJournal(this, 'journal2')">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Salin
+                  </button>
+                </div>
+                <div class="journal-code" id="journal2">
+                  <div class="journal-line">
+                    <span class="account-type debit">D</span>
+                    <span class="account-name">Beban Penyusutan</span>
+                    <span class="account-amount">Rp52.500.000</span>
+                  </div>
+                  <div class="journal-line credit">
+                    <span class="account-type credit">K</span>
+                    <span class="account-name">Akumulasi Penyusutan – Mesin</span>
+                    <span class="account-amount">Rp52.500.000</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Journal Entry 3 -->
+              <div class="journal-entry">
+                <div class="journal-header">
+                  <div class="journal-title">
+                    <span class="journal-number">3</span>
+                    Pelepasan Aset (Rugi Rp5 juta)
+                  </div>
+                  <button class="copy-btn" onclick="copyJournal(this, 'journal3')">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Salin
+                  </button>
+                </div>
+                <div class="journal-code" id="journal3">
+                  <div class="journal-line">
+                    <span class="account-type debit">D</span>
+                    <span class="account-name">Kas/Bank</span>
+                    <span class="account-amount">Rp100.000.000</span>
+                  </div>
+                  <div class="journal-line">
+                    <span class="account-type debit">D</span>
+                    <span class="account-name">Akumulasi Penyusutan – Mesin</span>
+                    <span class="account-amount">Rp420.000.000</span>
+                  </div>
+                  <div class="journal-line">
+                    <span class="account-type debit">D</span>
+                    <span class="account-name">Rugi Pelepasan Aset</span>
+                    <span class="account-amount">Rp5.000.000</span>
+                  </div>
+                  <div class="journal-line credit">
+                    <span class="account-type credit">K</span>
+                    <span class="account-name">Aset Tetap – Mesin</span>
+                    <span class="account-amount">Rp525.000.000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab: Studi Kasus -->
+            <div id="kasus" class="tab-content" role="tabpanel">
+              <div class="case-study">
+                <div class="case-study-header">
+                  <div class="case-study-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 style="margin-bottom: 0.25rem;">Studi Kasus: PT Maju Bersama</h2>
+                    <p style="margin: 0; color: var(--text-secondary);">Pembelian Properti Gabungan</p>
+                  </div>
+                </div>
+
+                <h3>Skenario</h3>
+                <p>
+                  PT Maju Bersama membeli gedung beserta tanah dengan total harga <strong>Rp2 miliar</strong>. 
+                  Berdasarkan penilaian profesional, alokasi nilainya adalah:
+                </p>
+                
+                <div class="info-grid">
+                  <div class="info-card">
+                    <div class="info-card-label">Nilai Tanah</div>
+                    <div class="info-card-value">Rp500.000.000</div>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-label">Nilai Gedung</div>
+                    <div class="info-card-value">Rp1.500.000.000</div>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-label">Estimasi Nilai Residu Gedung</div>
+                    <div class="info-card-value">Rp200.000.000</div>
+                  </div>
+                  <div class="info-card">
+                    <div class="info-card-label">Umur Manfaat Gedung</div>
+                    <div class="info-card-value">20 Tahun</div>
+                  </div>
+                </div>
+
+                <h3>Perhitungan Penyusutan</h3>
+                <p>
+                  Menggunakan metode garis lurus (straight-line):
+                </p>
+                <p style="font-family: 'JetBrains Mono', monospace; background: var(--bg-primary); padding: 1rem; border-radius: var(--radius-sm); font-size: 0.9rem;">
+                  Penyusutan = (Rp1.500.000.000 − Rp200.000.000) ÷ 20 tahun
+                </p>
+
+                <div class="calculation-result">
+                  <span class="result-label">Beban Penyusutan per Tahun:</span>
+                  <span class="result-value">Rp65.000.000</span>
+                </div>
+
+                <div class="note">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <span><strong>Penting:</strong> Tanah tidak disusutkan karena dianggap memiliki umur manfaat tidak terbatas.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab: Perbandingan -->
+            <div id="perbandingan" class="tab-content" role="tabpanel">
+              <section class="section">
+                <div class="section-header">
+                  <div class="section-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <h2>Perbandingan PSAK 16 vs IAS 16</h2>
+                </div>
+              </section>
+
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th style="width: 25%;">Aspek</th>
+                      <th style="width: 37.5%;">PSAK 16 (Indonesia)</th>
+                      <th style="width: 37.5%;">IAS 16 (IFRS)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Dasar Hukum</strong></td>
+                      <td>DSAK-OJK</td>
+                      <td>IASB</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Model Revaluasi</strong></td>
+                      <td>Diizinkan, tapi jarang diterapkan</td>
+                      <td>Lebih umum digunakan</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Komponen Aset</strong></td>
+                      <td class="table-highlight">Wajib dipisah</td>
+                      <td class="table-highlight">Wajib dipisah</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Penyusutan Tanah</strong></td>
+                      <td>Tidak (kecuali kasus langka)</td>
+                      <td>Tidak</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Biaya Pinjaman</strong></td>
+                      <td>Dikapitalisasi (PSAK 26)</td>
+                      <td>Dikapitalisasi (IAS 23)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Penurunan Nilai</strong></td>
+                      <td>PSAK 48</td>
+                      <td>IAS 36</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="highlight-box">
+                <strong>Kesimpulan:</strong> PSAK 16 sudah selaras secara substansial dengan IAS 16. Perbedaan utama terletak pada praktik implementasi di mana model revaluasi lebih jarang digunakan di Indonesia dibandingkan praktik internasional.
+              </div>
+            </div>
+
+            <!-- Tab: Aspek Spesifik -->
+            <div id="spesifik" class="tab-content" role="tabpanel">
+              <section class="section">
+                <div class="section-header">
+                  <div class="section-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                  </div>
+                  <h2>Aspek Spesifik yang Sering Diabaikan</h2>
+                </div>
+                <p style="margin-bottom: 1.5rem;">
+                  Berikut adalah beberapa aspek penting dalam PSAK 16 yang sering terlewatkan dalam praktik:
+                </p>
+              </section>
+
+              <div class="accordion">
+                <!-- Accordion Item 1 -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                  <div class="accordion-header">
+                    <span class="accordion-number">1</span>
+                    <span class="accordion-title">Biaya Pembongkaran & Pemulihan</span>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                  <div class="accordion-content">
+                    <p>
+                      Jika entitas memiliki kewajiban hukum atau implisit untuk membongkar dan memulihkan lokasi aset (misalnya: pabrik di akhir kontrak sewa), biaya tersebut harus <strong>didiskontokan dan dikapitalisasi</strong> sebagai bagian dari harga perolehan aset.
+                    </p>
+                    <p>
+                      Estimasi ini harus direviu secara berkala dan perubahan estimasi diperlakukan sesuai dengan PSAK 25 (Kebijakan Akuntansi).
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                  <div class="accordion-header">
+                    <span class="accordion-number">2</span>
+                    <span class="accordion-title">Pendekatan Komponen Aset (Component Approach)</span>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                  <div class="accordion-content">
+                    <p>
+                      PSAK 16 <strong>mewajibkan</strong> entitas memisahkan komponen utama aset jika memiliki pola konsumsi manfaat atau umur ekonomis yang berbeda.
+                    </p>
+                    <p><strong>Contoh penerapan pada gedung:</strong></p>
+                    <ul>
+                      <li>Struktur utama gedung (beton, rangka baja)</li>
+                      <li>Sistem lift dan eskalator</li>
+                      <li>Sistem HVAC (heating, ventilation, air conditioning)</li>
+                      <li>Atap dan sistem waterproofing</li>
+                      <li>Interior fit-out dan partisi</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                  <div class="accordion-header">
+                    <span class="accordion-number">3</span>
+                    <span class="accordion-title">Penghentian Sementara Penyusutan</span>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                  <div class="accordion-content">
+                    <p>
+                      Penyusutan <strong>tidak dihentikan</strong> selama aset tidak digunakan (idle) atau tidak lagi digunakan secara aktif, kecuali aset tersebut telah disusutkan penuh.
+                    </p>
+                    <p>
+                      Namun, jika aset menganggur dalam waktu lama, entitas harus mempertimbangkan untuk menguji <strong>penurunan nilai</strong> sesuai PSAK 48.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Accordion Item 4 -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                  <div class="accordion-header">
+                    <span class="accordion-number">4</span>
+                    <span class="accordion-title">Pengungkapan Wajib yang Sering Terlewat</span>
+                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                  <div class="accordion-content">
+                    <p>Berikut adalah pengungkapan wajib yang sering tidak disajikan lengkap:</p>
+                    <ul>
+                      <li><strong>Metode penyusutan</strong> dan estimasi umur manfaat untuk setiap kategori aset</li>
+                      <li><strong>Nilai revaluasi</strong> (jika menggunakan model revaluasi) beserta tanggal penilaian dan identitas penilai</li>
+                      <li><strong>Aset yang dijaminkan</strong> sebagai agunan pinjaman atau liabilitas lain</li>
+                      <li><strong>Komitmen kontraktual</strong> untuk pembelian aset tetap yang belum selesai</li>
+                      <li><strong>Kompensasi dari pihak ketiga</strong> atas aset yang mengalami penurunan nilai atau hilang</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-text">
+            © 2025 Panduan PSAK 16 — Untuk keperluan edukasi dan referensi
+          </p>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Tentang</a>
+            <a href="#" class="footer-link">Dokumentasi</a>
+            <a href="#" class="footer-link">Kontak</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // ========================================
+    // THEME MANAGEMENT
+    // ========================================
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (prefersDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+
+    // Initialize theme on page load
+    initTheme();
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      }
+    });
+
+    // ========================================
+    // TAB NAVIGATION
+    // ========================================
+    function openTab(evt, tabId) {
+      // Remove active class from all tabs and content
+      document.querySelectorAll('.tab-content').forEach(el => {
+        el.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      
+      // Add active class to selected tab and content
+      const targetTab = document.getElementById(tabId);
+      if (targetTab) {
+        targetTab.classList.add('active');
+      }
+      
+      evt.currentTarget.classList.add('active');
+      evt.currentTarget.setAttribute('aria-selected', 'true');
+    }
+
+    // ========================================
+    // ACCORDION
+    // ========================================
+    function toggleAccordion(element) {
+      // Check if clicking on the accordion header (not content)
+      if (event.target.closest('.accordion-content')) {
+        return;
+      }
+      
+      const isOpen = element.classList.contains('open');
+      
+      // Close all accordions first (optional: for single open behavior)
+      // document.querySelectorAll('.accordion-item').forEach(item => {
+      //   item.classList.remove('open');
+      // });
+      
+      // Toggle the clicked accordion
+      if (isOpen) {
+        element.classList.remove('open');
+      } else {
+        element.classList.add('open');
+      }
+    }
+
+    // ========================================
+    // COPY JOURNAL FUNCTION
+    // ========================================
+    function copyJournal(button, journalId) {
+      const journalElement = document.getElementById(journalId);
+      const lines = journalElement.querySelectorAll('.journal-line');
+      
+      let text = '';
+      lines.forEach(line => {
+        const type = line.querySelector('.account-type').textContent;
+        const name = line.querySelector('.account-name').textContent;
+        const amount = line.querySelector('.account-amount').textContent;
+        const prefix = line.classList.contains('credit') ? '    ' : '';
+        text += `${prefix}(${type}) ${name.padEnd(35)} ${amount}\n`;
+      });
+      
+      navigator.clipboard.writeText(text.trim()).then(() => {
+        // Visual feedback
+        button.classList.add('copied');
+        const originalHTML = button.innerHTML;
+        button.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          Tersalin!
+        `;
+        
+        setTimeout(() => {
+          button.classList.remove('copied');
+          button.innerHTML = originalHTML;
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+      });
+    }
+
+    // ========================================
+    // KEYBOARD NAVIGATION
+    // ========================================
+    document.addEventListener('keydown', (e) => {
+      // Tab navigation with arrow keys
+      if (document.activeElement.classList.contains('tab-btn')) {
+        const tabs = Array.from(document.querySelectorAll('.tab-btn'));
+        const currentIndex = tabs.indexOf(document.activeElement);
+        
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          const nextIndex = (currentIndex + 1) % tabs.length;
+          tabs[nextIndex].focus();
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prevIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+          tabs[prevIndex].focus();
+        }
+      }
+    });
+
+    // ========================================
+    // SMOOTH SCROLL FOR INTERNAL LINKS
+    // ========================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
