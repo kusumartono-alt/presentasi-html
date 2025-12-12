@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notulensi Rapat Evaluasi Penggunaan ERP</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #2c3e50;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header Styles */
+    .header {
+      background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+      color: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 40px rgba(0, 86, 179, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-subtitle {
+      opacity: 0.9;
+      font-size: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Info Box */
+    .info-box {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .info-item i {
+      color: #0056b3;
+      font-size: 1.2rem;
+      margin-top: 0.2rem;
+    }
+
+    .info-item .info-label {
+      font-size: 0.85rem;
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .info-item .info-value {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    /* Navigation */
+    .nav-menu {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .nav-menu h3 {
+      font-size: 0.9rem;
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #f8f9fa;
+      color: #0056b3;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background: #0056b3;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Section Styles */
+    .section {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-left: 5px solid #0056b3;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    .section h2 {
+      color: #0056b3;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #e9ecef;
+    }
+
+    .section h2 i {
+      background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    /* Item Styles */
+    .item {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item h3 {
+      color: #1e40af;
+      font-size: 1.15rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .item h3::before {
+      content: '';
+      width: 4px;
+      height: 20px;
+      background: linear-gradient(135deg, #0056b3, #00a8e8);
+      border-radius: 2px;
+    }
+
+    /* Category Labels */
+    .category {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin: 1.25rem 0 0.75rem 0;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    .category-plan {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .category-progress {
+      background: #d1fae5;
+      color: #047857;
+    }
+
+    .category-problem {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .category-solution {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    /* Lists */
+    ul, ol {
+      margin: 0.5rem 0 0 0;
+      padding-left: 1.75rem;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+      padding-left: 0.25rem;
+    }
+
+    li::marker {
+      color: #0056b3;
+    }
+
+    /* Status Badges */
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .done {
+      background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+      color: #047857;
+    }
+
+    .inprogress {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      color: #b45309;
+    }
+
+    .pending {
+      background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+      color: #4338ca;
+    }
+
+    /* Highlight Box */
+    .highlight-box {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 1px solid #f59e0b;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+    }
+
+    .highlight-box strong {
+      color: #b45309;
+    }
+
+    .highlight-box .case-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Amount Display */
+    .amount {
+      display: inline-block;
+      background: #dc2626;
+      color: white;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .amount-info {
+      background: #059669;
+    }
+
+    /* Participants Table */
+    .participants-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .participants-table th,
+    .participants-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .participants-table th {
+      background: #f1f5f9;
+      font-weight: 600;
+      color: #475569;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .participants-table tr:hover {
+      background: #f8fafc;
+    }
+
+    /* Action Items Table */
+    .action-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .action-table th,
+    .action-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border: 1px solid #e2e8f0;
+    }
+
+    .action-table th {
+      background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+      color: white;
+      font-weight: 600;
+    }
+
+    .action-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .action-table tr:hover {
+      background: #e2e8f0;
+    }
+
+    /* Summary Cards */
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .summary-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-top: 4px solid;
+    }
+
+    .summary-card.blue { border-color: #0056b3; }
+    .summary-card.green { border-color: #059669; }
+    .summary-card.orange { border-color: #f59e0b; }
+    .summary-card.red { border-color: #dc2626; }
+
+    .summary-card .number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .summary-card .label {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-top: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .footer p {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .footer .signature {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer .signature-item {
+      text-align: center;
+    }
+
+    .footer .signature-line {
+      width: 180px;
+      border-bottom: 2px solid #1e293b;
+      margin: 3rem auto 0.5rem;
+    }
+
+    .footer .signature-name {
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .footer .signature-role {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    /* Print Button */
+    .print-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+      color: white;
+      border: none;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .print-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 86, 179, 0.5);
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 1rem;
+      }
+
+      .print-btn {
+        display: none;
+      }
+
+      .section {
+        box-shadow: none;
+        border: 1px solid #e2e8f0;
+        break-inside: avoid;
+      }
+
+      .header {
+        background: #0056b3 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .header {
+        padding: 1.5rem;
+      }
+
+      .header h1 {
+        font-size: 1.4rem;
+      }
+
+      .section {
+        padding: 1.25rem;
+      }
+
+      .section h2 {
+        font-size: 1.2rem;
+      }
+
+      .info-box {
+        grid-template-columns: 1fr;
+      }
+
+      .footer .signature {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .print-btn {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <h1><i class="fas fa-clipboard-list"></i> Notulensi Rapat Evaluasi Penggunaan ERP</h1>
+      <p class="header-subtitle">Dokumen Resmi Hasil Pertemuan Evaluasi Sistem Enterprise Resource Planning</p>
+    </header>
+
+    <!-- Info Box -->
+    <div class="info-box">
+      <div class="info-item">
+        <i class="fas fa-calendar-alt"></i>
+        <div>
+          <div class="info-label">Tanggal</div>
+          <div class="info-value">2 Desember 2025</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-clock"></i>
+        <div>
+          <div class="info-label">Waktu</div>
+          <div class="info-value">09.00 – 12.00 WIB</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <div class="info-label">Lokasi</div>
+          <div class="info-value">Ruang Rapat Utama, Lantai 3</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-user-tie"></i>
+        <div>
+          <div class="info-label">Pemimpin Rapat</div>
+          <div class="info-value">Bapak Ali</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+      <div class="summary-card blue">
+        <div class="number">7</div>
+        <div class="label">Area Dibahas</div>
+      </div>
+      <div class="summary-card green">
+        <div class="number">2</div>
+        <div class="label">Selesai</div>
+      </div>
+      <div class="summary-card orange">
+        <div class="number">5</div>
+        <div class="label">Dalam Proses</div>
+      </div>
+      <div class="summary-card red">
+        <div class="number">12</div>
+        <div class="label">Tindak Lanjut</div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-menu">
+      <h3><i class="fas fa-list"></i> Daftar Isi</h3>
+      <ul class="nav-links">
+        <li><a href="#pembukaan"><i class="fas fa-door-open"></i> Pembukaan</a></li>
+        <li><a href="#umum"><i class="fas fa-globe"></i> Umum</a></li>
+        <li><a href="#finance-project"><i class="fas fa-project-diagram"></i> Proyek Keuangan</a></li>
+        <li><a href="#finance-ho"><i class="fas fa-building"></i> Keuangan Kantor Pusat</a></li>
+        <li><a href="#ap"><i class="fas fa-file-invoice-dollar"></i> Hutang Usaha</a></li>
+        <li><a href="#ar"><i class="fas fa-hand-holding-usd"></i> Piutang Usaha</a></li>
+        <li><a href="#pajak-rab"><i class="fas fa-calculator"></i> Pajak & RAB</a></li>
+        <li><a href="#penutup"><i class="fas fa-flag-checkered"></i> Penutup</a></li>
+      </ul>
+    </nav>
+
+    <!-- 1. Pembukaan -->
+    <section class="section" id="pembukaan">
+      <h2><i class="fas fa-door-open"></i> 1. Pembukaan</h2>
+      <p>Rapat dibuka oleh <strong>Bapak Ali</strong> selaku Pemimpin Rapat dengan menyampaikan tujuan utama pertemuan, yaitu:</p>
+      <ul>
+        <li><strong>Mengevaluasi</strong> proses kerja yang telah berjalan selama ini.</li>
+        <li><strong>Mengidentifikasi</strong> kendala-kendala dalam penggunaan sistem ERP.</li>
+        <li><strong>Menyusun</strong> solusi dan rencana perbaikan ke depan.</li>
+      </ul>
+      <span class="status done"><i class="fas fa-check-circle"></i> Selesai</span>
+    </section>
+
+    <!-- 2. Evaluasi Berdasarkan Area Kerja -->
+    <section class="section" id="evaluasi">
+      <h2><i class="fas fa-chart-line"></i> 2. Evaluasi Berdasarkan Area Kerja</h2>
+
+      <!-- A. Umum -->
+      <div class="item" id="umum">
+        <h3>A. Umum</h3>
+
+        <div class="category category-plan">
+          <i class="fas fa-bullseye"></i> Rencana Kerja
+        </div>
+        <ul>
+          <li>Menyusun <strong>SLA (Service Level Agreement)</strong> untuk semua jenis pekerjaan, dilengkapi dengan <em>flowchart</em> dan pembagian level prioritas.</li>
+          <li>Menyusun ulang <em>job description</em> agar pembagian kerja lebih seimbang — satu orang bertanggung jawab atas satu tugas utama, tanpa tumpang tindih.</li>
+          <li>Menetapkan jadwal rapat progres rutin setiap <strong>Selasa atau Jumat</strong>.</li>
+          <li>Menetapkan standar <strong>rekonsiliasi laporan keuangan dan pajak</strong>.</li>
+          <li>Menghapus akun-akun silang (<em>inter-company accounts</em>) yang sudah tidak relevan di sistem.</li>
+          <li>Menggunakan <strong>huruf kapital</strong> untuk semua entri data di ERP demi konsistensi.</li>
+          <li>Membuat <strong>Master Barang</strong> yang terstandarisasi.</li>
+          <li>Menyusun laporan proyek secara komprehensif (aspek teknis dan keuangan).</li>
+          <li>Menyusun laporan data hutang yang belum tercatat di sistem ERP.</li>
+        </ul>
+
+        <div class="category category-progress">
+          <i class="fas fa-spinner"></i> Kemajuan Saat Ini
+        </div>
+        <ul>
+          <li>Review <em>job description</em> sudah dimulai, namun belum final.</li>
+          <li>Proses identifikasi kebutuhan SLA sedang berjalan.</li>
+          <li>Tim sedang melakukan pemantauan dan pembersihan akun silang di ERP.</li>
+        </ul>
+
+        <div class="category category-problem">
+          <i class="fas fa-exclamation-triangle"></i> Kendala yang Dihadapi
+        </div>
+        <ul>
+          <li>SLA belum final, sehingga <em>timeline</em> kerja menjadi tidak konsisten.</li>
+          <li>Beberapa fitur ERP belum digunakan secara optimal oleh pengguna.</li>
+          <li>Saldo akun silang belum mencapai nol pada saat <em>cut-off</em> periode.</li>
+        </ul>
+
+        <div class="category category-solution">
+          <i class="fas fa-lightbulb"></i> Solusi yang Diusulkan
+        </div>
+        <ul>
+          <li>Melakukan finalisasi SLA dan menyosialisasikannya ke seluruh tim terkait.</li>
+          <li>Membuat struktur <em>job description</em> baru yang lebih efisien dan terukur.</li>
+          <li>Mengadakan rapat koordinasi bersama tim ERP untuk mengaktifkan modul-modul yang belum digunakan.</li>
+        </ul>
+
+        <span class="status inprogress"><i class="fas fa-hourglass-half"></i> Dalam Proses</span>
+      </div>
+
+      <!-- B. Proyek Keuangan -->
+      <div class="item" id="finance-project">
+        <h3>B. Proyek Keuangan (<em>Finance Project</em>)</h3>
+
+        <div class="category category-plan">
+          <i class="fas fa-bullseye"></i> Rencana Kerja
+        </div>
+        <ul>
+          <li>Merapikan alur pelaporan pembayaran agar lebih terstruktur.</li>
+          <li>Menetapkan <em>deadline</em> tetap untuk laporan <strong>Project Manager (PM)</strong> dan <em>cash cut</em>.</li>
+          <li>Memperkuat SOP pelaporan di lokasi proyek (<em>site</em>).</li>
+        </ul>
+
+        <div class="category category-problem">
+          <i class="fas fa-exclamation-triangle"></i> Kendala yang Dihadapi
+        </div>
+        <ul>
+          <li>Laporan dari PM sering mengalami keterlambatan pengiriman.</li>
+          <li>SOP pelaporan di <em>site</em> belum sepenuhnya dipatuhi oleh tim lapangan.</li>
+        </ul>
+
+        <div class="category category-solution">
+          <i class="fas fa-lightbulb"></i> Solusi yang Diusulkan
+        </div>
+        <ul>
+          <li>Mewajibkan <em>timeline</em> laporan PM/CM dengan sistem pengingat otomatis (<em>automated reminder</em>).</li>
+          <li>Melakukan sosialisasi ulang SOP di <em>site</em> dan menerapkan sistem <strong>cek & approve digital</strong>.</li>
+        </ul>
+
+        <span class="status inprogress"><i class="fas fa-hourglass-half"></i> Dalam Proses</span>
+      </div>
+
+      <!-- C. Keuangan Kantor Pusat -->
+      <div class="item" id="finance-ho">
+        <h3>C. Keuangan Kantor Pusat</h3>
+
+        <div class="category category-plan">
+          <i class="fas fa-bullseye"></i> Rencana Kerja
+        </div>
+        <ul>
+          <li>Menjadwalkan <strong>stock opname</strong> untuk bulan September dan akhir tahun.</li>
+          <li>Membuat proses rekonsiliasi bank menjadi lebih efisien dan akurat.</li>
+        </ul>
+
+        <div class="category category-problem">
+          <i class="fas fa-exclamation-triangle"></i> Kendala yang Dihadapi
+        </div>
+        <ul>
+          <li>Masih terjadi kesalahan pembelian atau kelebihan stok barang (<em>inventory</em>).</li>
+          <li>Proses <em>approval</em> masih dilakukan secara manual, sehingga memperlambat alur kerja.</li>
+        </ul>
+
+        <div class="category category-solution">
+          <i class="fas fa-lightbulb"></i> Solusi yang Diusulkan
+        </div>
+        <ul>
+          <li>Melakukan standarisasi SOP <em>stock opname</em> untuk seluruh cabang.</li>
+          <li>Menerapkan sistem <em>approval</em> digital yang terintegrasi di dalam ERP.</li>
+        </ul>
+
+        <span class="status inprogress"><i class="fas fa-hourglass-half"></i> Dalam Proses</span>
+      </div>
+
+      <!-- D. Hutang Usaha (AP) -->
+      <div class="item" id="ap">
+        <h3>D. Hutang Usaha (<em>Account Payable</em> / AP)</h3>
+
+        <div class="category category-plan">
+          <i class="fas fa-bullseye"></i> Rencana Kerja
+        </div>
+        <ul>
+          <li>Mempercepat pengiriman surat jalan dengan sistem <em>scan/upload real-time</em>.</li>
+          <li>Melakukan implementasi penuh modul aset di ERP.</li>
+          <li>Melakukan penyesuaian perhitungan <em>leasing</em> dan depresiasi sesuai dengan standar <strong>PSAK</strong>.</li>
+        </ul>
+
+        <div class="category category-problem">
+          <i class="fas fa-exclamation-triangle"></i> Kendala yang Dihadapi
+        </div>
+        <ul>
+          <li>Surat jalan sering terlambat dikirim, sehingga menghambat penerimaan material dan proses <em>invoice</em>.</li>
+          <li>Modul aset belum sepenuhnya diimplementasikan dan dimanfaatkan.</li>
+          <li>Proses <em>approval</em> masih dilakukan secara manual.</li>
+        </ul>
+
+        <div class="category category-solution">
+          <i class="fas fa-lightbulb"></i> Solusi yang Diusulkan
+        </div>
+        <ul>
+          <li>Melakukan implementasi penuh modul aset disertai dengan pelatihan pengguna (<em>user training</em>).</li>
+          <li>Menyederhanakan dan mendigitalisasi jalur <em>approval</em>.</li>
+        </ul>
+
+        <span class="status inprogress"><i class="fas fa-hourglass-half"></i> Dalam Proses</span>
+      </div>
+
+      <!-- E. Piutang Usaha (AR) -->
+      <div class="item" id="ar">
+        <h3>E. Piutang Usaha (<em>Account Receivable</em> / AR)</h3>
+
+        <div class="category category-plan">
+          <i class="fas fa-bullseye"></i> Rencana Kerja
+        </div>
+        <ul>
+          <li>Membuat <em>timeline</em> penagihan yang jelas, mulai dari awal bulan hingga tanggal jatuh tempo.</li>
+          <li>Memantau <em>aging</em> AR secara berkala — mingguan dan bulanan.</li>
+          <li>Memastikan semua <em>invoice</em> proyek sesuai dengan kontrak, BAST, dan progres fisik.</li>
+          <li>Melakukan standarisasi format laporan: <em>aging</em> AR, <em>invoice outstanding</em>, dan <em>cash in</em>.</li>
+        </ul>
+
+        <div class="category category-problem">
+          <i class="fas fa-exclamation-triangle"></i> Kendala yang Dihadapi
+        </div>
+        <ul>
+          <li>Dokumen pendukung <em>invoice</em> (BAST, laporan progres, surat jalan) sering terlambat dikirim dari proyek/PM.</li>
+          <li>Terdapat ketidaksesuaian antara progres fisik dari PM dengan tagihan yang dibuat oleh tim AR.</li>
+        </ul>
+
+        <div class="highlight-box">
+          <div class="case-title"><i class="fas fa-exclamation-circle"></i> Kasus Khusus: CISEM</div>
+          <p>Pengiriman <strong>4 package compressor</strong> mengalami penundaan. Hanya 3 <em>package</em> yang telah tiba, sedangkan 1 <em>package</em> ditunda hingga awal <strong>Januari 2026</strong>.</p>
+          <p style="margin-top: 0.5rem;">Akibatnya, anggaran senilai <span class="amount">Rp9 Miliar</span> (0,5% dari nilai total compressor dari Jereh Oil & Gas) belum dapat direalisasikan.</p>
+          <p style="margin-top: 0.5rem;"><strong>Estimasi kedatangan material:</strong> 12 Desember 2025 di Jakarta.</p>
+        </div>
+
+        <div class="category category-solution">
+          <i class="fas fa-lightbulb"></i> Solusi yang Diusulkan
+        </div>
+        <ul>
+          <li>Melakukan <em>follow-up</em> mingguan kepada PM terkait kelengkapan dokumen untuk keperluan <em>invoicing</em>.</li>
+          <li>Melakukan <em>cross-check</em> kontrak sebelum menerbitkan <em>invoice</em> untuk menghindari revisi berulang.</li>
+        </ul>
+
+        <div class="highlight-box">
+          <div class="case-title"><i class="fas fa-info-circle"></i> Catatan Tambahan: CISEM</div>
+          <p>Anggaran tersebut berasal dari <strong>SAT Metering</strong> dengan nilai sebesar <span class="amount amount-info">Rp1,1 Miliar</span>.</p>
+        </div>
+
+        <span class="status inprogress"><i class="fas fa-hourglass-half"></i> Dalam Proses</span>
+      </div>
+
+      <!-- F. Pajak & G. Modul RAB -->
+      <div class="item" id="pajak-rab">
+        <h3>F. Pajak</h3>
+        <p style="color: #64748b; font-style: italic;"><i class="fas fa-info-circle"></i> Belum ada poin spesifik yang dibahas pada rapat ini. Akan diagendakan pada pertemuan selanjutnya.</p>
+
+        <h3 style="margin-top: 1.5rem;">G. Modul RAB</h3>
+        <p><strong>Seluruh peserta rapat</strong> terlibat dalam pembahasan modul RAB. Diskusi mencakup pengembangan fitur dan optimalisasi penggunaan modul.</p>
+        <span class="status inprogress"><i class="fas fa-hourglass-half"></i> Sedang Berjalan</span>
+      </div>
+
+    </section>
+
+    <!-- 3. Ringkasan Tindak Lanjut -->
+    <section class="section" id="action-items">
+      <h2><i class="fas fa-tasks"></i> 3. Ringkasan Tindak Lanjut</h2>
+      <table class="action-table">
+        <thead>
+          <tr>
+            <th style="width: 5%;">No.</th>
+            <th style="width: 35%;">Tindakan</th>
+            <th style="width: 20%;">Penanggung Jawab</th>
+            <th style="width: 20%;">Tenggat Waktu</th>
+            <th style="width: 20%;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Finalisasi SLA untuk semua jenis pekerjaan</td>
+            <td>Tim Manajemen</td>
+            <td>20 Desember 2025</td>
+            <td><span class="status inprogress" style="margin: 0;">Dalam Proses</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Penyusunan ulang <em>job description</em></td>
+            <td>HRD & Kepala Divisi</td>
+            <td>15 Desember 2025</td>
+            <td><span class="status inprogress" style="margin: 0;">Dalam Proses</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Pembersihan akun silang di ERP</td>
+            <td>Tim Finance</td>
+            <td>31 Desember 2025</td>
+            <td><span class="status inprogress" style="margin: 0;">Dalam Proses</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Implementasi sistem <em>approval</em> digital</td>
+            <td>Tim IT & Finance</td>
+            <td>31 Januari 2026</td>
+            <td><span class="status pending" style="margin: 0;">Menunggu</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Sosialisasi SOP pelaporan <em>site</em></td>
+            <td>Project Manager</td>
+            <td>10 Desember 2025</td>
+            <td><span class="status pending" style="margin: 0;">Menunggu</span></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Implementasi modul aset + pelatihan pengguna</td>
+            <td>Tim ERP & AP</td>
+            <td>31 Januari 2026</td>
+            <td><span class="status pending" style="margin: 0;">Menunggu</span></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><em>Stock opname</em> akhir tahun</td>
+            <td>Tim Warehouse & Finance</td>
+            <td>31 Desember 2025</td>
+            <td><span class="status pending" style="margin: 0;">Menunggu</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 4. Penutup -->
+    <section class="section" id="penutup">
+      <h2><i class="fas fa-flag-checkered"></i> 4. Penutup</h2>
+      <p><strong>Bapak Ali</strong> menutup rapat dengan menekankan bahwa seluruh pihak perlu melakukan perbaikan pada:</p>
+      <ul>
+        <li><strong>Proses kerja</strong> — dengan mengikuti SLA yang telah disepakati.</li>
+        <li><strong>Alur komunikasi</strong> — baik internal maupun lintas divisi.</li>
+        <li><strong>Pemanfaatan sistem ERP</strong> — dengan memaksimalkan penggunaan modul-modul yang tersedia.</li>
+      </ul>
+
+      <p style="margin-top: 1rem;">Hal ini bertujuan agar operasional dan pelaporan perusahaan dapat berjalan <strong>lebih efektif dan efisien</strong>.</p>
+
+      <div class="highlight-box" style="background: linear-gradient(135deg, #e0f2fe, #bae6fd); border-color: #0284c7;">
+        <div class="case-title" style="color: #0369a1;"><i class="fas fa-bookmark"></i> Catatan Penting</div>
+        <p>Aktivitas <strong>reporting</strong> dan <strong>operasional</strong> harus dipisahkan dengan jelas untuk:</p>
+        <ul style="margin-top: 0.5rem;">
+          <li>Menghindari tumpang tindih tugas antar personel.</li>
+          <li>Memastikan setiap fungsi dapat mencapai target sesuai dengan <strong>SLA</strong> dan <strong>KPI</strong> masing-masing.</li>
+        </ul>
+      </div>
+
+      <p style="margin-top: 1rem;"><strong>Rapat berikutnya dijadwalkan pada:</strong> Selasa, 10 Desember 2025, pukul 09.00 WIB.</p>
+
+      <span class="status done"><i class="fas fa-check-circle"></i> Selesai</span>
+    </section>
+
+    <!-- Footer dengan Tanda Tangan -->
+    <footer class="footer">
+      <p><i class="fas fa-file-alt"></i> Notulensi ini dibuat sebagai dokumentasi resmi hasil rapat.</p>
+      
+      <div class="signature">
+        <div class="signature-item">
+          <div class="signature-line"></div>
+          <div class="signature-name">Bapak Ali</div>
+          <div class="signature-role">Pemimpin Rapat</div>
+        </div>
+        <div class="signature-item">
+          <div class="signature-line"></div>
+          <div class="signature-name">Notulis</div>
+          <div class="signature-role">Sekretaris Rapat</div>
+        </div>
+      </div>
+
+      <p style="margin-top: 2rem; font-size: 0.85rem; color: #94a3b8;">
+        <i class="fas fa-clock"></i> Dokumen ini dibuat pada tanggal 2 Desember 2025
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Print Button -->
+  <button class="print-btn" onclick="window.print()">
+    <i class="fas fa-print"></i> Cetak Notulensi
+  </button>
+
+</body>
+</html>
